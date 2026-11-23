@@ -6,7 +6,7 @@ import json
 import re
 from pathlib import Path
 
-PADRAO = re.compile(r"^(?P<data>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z) (?P<nivel>INFO|WARNING|ERROR|CRITICAL) (?P<mensagem>.+)$")
+PADRAO = re.compile(r"^(?P<data>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z) (?P<nivel>INFO|WARNING|ERROR|CRITICAL) (?P<mensagem>.+)$")
 NIVEIS = ("INFO", "WARNING", "ERROR", "CRITICAL")
 
 
