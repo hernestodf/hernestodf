@@ -14,6 +14,7 @@ Laboratório **100% fictício**, voltado a demonstrar competências de **Suporte
 | Diagnóstico de rede | `ip`, `getent`, `ping` (opcional) | `docs/roteiro-troubleshooting.md` |
 | Diagnóstico de serviços e logs | `systemctl`, `journalctl` (somente leitura) | `docs/roteiro-troubleshooting.md` |
 | Backup e recuperação | `tar`, `sha256sum`, `cmp` | `scripts/backup-demo.sh` |
+| Análise de logs fictícios | `Python`, expressões regulares, JSON | `scripts/analisar_logs.py` |
 | Verificação automatizada | `unittest`, `bash -n`, ShellCheck | GitHub Actions |
 
 ## Início rápido
@@ -26,6 +27,7 @@ cd hernestodf/labs/linux-administracao
 
 bash scripts/diagnostico.sh
 bash scripts/backup-demo.sh
+python3 scripts/analisar_logs.py
 python3 -m unittest discover -s tests -v
 ```
 
@@ -46,6 +48,7 @@ A imagem executa somente a demonstração de backup. O contêiner não recebe ac
 - [Incidente fictício: disco quase cheio](incidentes/INC-LINUX-001.md)
 - [Runbook de recuperação e escalonamento](docs/runbook-disco.md)
 - [Comandos Linux para entrevistas técnicas](docs/comandos-essenciais.md)
+- [Análise de logs fictícios com relatório JSON](docs/analise-de-logs.md)
 
 ## Testes e integração contínua
 
