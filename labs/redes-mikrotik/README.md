@@ -17,10 +17,10 @@ Projeto didático **100% fictício**, com topologia, endereçamento, diagnóstic
               /       |        \
        VLAN 10     VLAN 20     VLAN 30
        Gestão      Usuários    Serviços
-       .10.0/24    .20.0/24    .30.0/24
+       .0/27       .32/27      .64/27
 ```
 
-Todos os endereços pertencem à faixa de documentação **192.0.2.0/24, 198.51.100.0/24 ou 203.0.113.0/24**. A tabela do laboratório utiliza sub-redes /27 da primeira faixa; os rótulos acima são nomes lógicos, não endereços completos.
+O exemplo usa exclusivamente a faixa reservada para documentação **192.0.2.0/24**. Os rótulos da topologia são abreviações das sub-redes /27 apresentadas na tabela.
 
 | VLAN | Finalidade | Sub-rede fictícia | Gateway ilustrativo |
 |---|---|---|---|
