@@ -65,6 +65,15 @@ Aguarde o intervalo de coleta (15 s) e o período `for` das regras (30 s). Veja 
 - [Latência elevada](runbooks/high-latency.md)
 - [Taxa de erros elevada](runbooks/high-error-rate.md)
 
+## Gestão de incidentes (exercício)
+
+- [INC-2026-001: chamado fictício completo](incidents/INC-2026-001.md)
+- [RCA-2026-001: análise de causa raiz](incidents/RCA-2026-001.md)
+- [Matriz de severidade, SLA e escalonamento](incidents/SEVERITY-SLA.md)
+- [Template reutilizável de incidente](incidents/TEMPLATE.md)
+
+A linha do tempo, os tempos de atendimento e as metas de SLA são **hipotéticos**. Não são medições de sistemas empresariais.
+
 ## Testes e validação
 
 ```bash
