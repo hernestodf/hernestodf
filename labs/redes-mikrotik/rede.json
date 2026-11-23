@@ -1,0 +1,23 @@
+{
+  "projeto": "Rede fictícia para laboratório",
+  "vlans": [
+    {
+      "id": 10,
+      "nome": "Gestão",
+      "rede": "192.0.2.0/27",
+      "gateway": "192.0.2.1"
+    },
+    {
+      "id": 20,
+      "nome": "Usuários",
+      "rede": "192.0.2.32/27",
+      "gateway": "192.0.2.33"
+    },
+    {
+      "id": 30,
+      "nome": "Serviços",
+      "rede": "192.0.2.64/27",
+      "gateway": "192.0.2.65"
+    }
+  ]
+}
