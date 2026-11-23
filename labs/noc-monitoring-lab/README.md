@@ -4,6 +4,10 @@ Laboratório público e **100% fictício** para demonstrar monitoramento de serv
 
 **Stack:** Prometheus, Alertmanager, Grafana, Python (stdlib), Docker Compose, testes `unittest` e GitHub Actions.
 
+![Diagrama de arquitetura do NOC Monitoring Lab](docs/architecture.svg)
+
+**Apresentação visual:** [Visão geral para recrutadores](docs/portfolio-presentation.md) · [Arquitetura](docs/architecture.md) · [Como obter capturas reais](docs/evidence-guide.md)
+
 ## Arquitetura
 
 ```text
