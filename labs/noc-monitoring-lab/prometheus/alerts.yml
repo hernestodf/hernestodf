@@ -1,0 +1,30 @@
+groups:
+  - name: noc-demo
+    rules:
+      - alert: DemoServiceDown
+        expr: noc_demo_service_up == 0
+        for: 30s
+        labels:
+          severity: critical
+          environment: lab
+        annotations:
+          summary: "Serviço fictício indisponível"
+          description: "A métrica noc_demo_service_up está em zero; siga o runbook service-down.md."
+      - alert: DemoHighLatency
+        expr: noc_demo_latency_seconds > 1
+        for: 30s
+        labels:
+          severity: warning
+          environment: lab
+        annotations:
+          summary: "Latência fictícia elevada"
+          description: "A latência simulada ultrapassou um segundo; siga high-latency.md."
+      - alert: DemoHighErrorRate
+        expr: noc_demo_error_ratio > 0.1
+        for: 30s
+        labels:
+          severity: warning
+          environment: lab
+        annotations:
+          summary: "Taxa de erros fictícia elevada"
+          description: "A taxa de erros simulada ultrapassou 10%; siga high-error-rate.md."
