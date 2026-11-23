@@ -62,6 +62,7 @@ Ferramentas para estruturar instruções, memória e automações de agentes de 
 
 Projetos demonstrativos **independentes**, com dados fictícios e sem código de produção:
 
+- 🌐 **[Laboratório de Redes e MikroTik](labs/redes-mikrotik/README.md)** — TCP/IP, VLAN, DNS, DHCP, roteamento, diagnóstico e testes de endereçamento.
 - 🐧 **[Laboratório de Administração Linux](labs/linux-administracao/README.md)** — Diagnóstico, logs, serviços, rede, backup, Bash, Docker e testes automatizados.
 - 📡 **[Laboratório de Monitoramento NOC](labs/noc-monitoring-lab/README.md)** — Prometheus, Grafana, Alertmanager, incidentes simulados, runbooks e CI.
 - 🐳 **[ProFox DevOps Lab](labs/profox-devops-lab/README.md)** — Docker, Compose, health checks, Go e pipeline CI.
