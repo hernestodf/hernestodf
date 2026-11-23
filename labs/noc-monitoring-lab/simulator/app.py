@@ -56,7 +56,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         parsed = urlsplit(self.path)
         if parsed.path != "/simulate":
-            self.respond(404, '{"error":"not found"}\n")
+            self.respond(404, '{"error":"not found"}\\n')
             return
         scenario = parse_qs(parsed.query).get("scenario", [""])[0]
         if scenario not in SCENARIOS:
