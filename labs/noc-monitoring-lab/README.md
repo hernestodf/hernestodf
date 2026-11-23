@@ -1,19 +1,19 @@
-# NOC Monitoring Lab
+# Laboratório de Monitoramento NOC
 
 Laboratório público e **100% fictício** para demonstrar monitoramento de serviços, alertas, investigação de incidentes e runbooks de operação NOC.
 
-**Stack:** Prometheus, Alertmanager, Grafana, Python (stdlib), Docker Compose, testes `unittest` e GitHub Actions.
+**Tecnologias:** Prometheus, Alertmanager, Grafana, Python (stdlib), Docker Compose, testes `unittest` e GitHub Actions.
 
-![Diagrama de arquitetura do NOC Monitoring Lab](docs/architecture.svg)
+![Diagrama de arquitetura do Laboratório de Monitoramento NOC](docs/architecture.svg)
 
 **Apresentação visual:** [Visão geral para recrutadores](docs/portfolio-presentation.md) · [Arquitetura](docs/architecture.md) · [Como obter capturas reais](docs/evidence-guide.md)
 
 ## Arquitetura
 
 ```text
-[simulador HTTP /metrics] --scrape--> [Prometheus] --regras--> [Alertmanager]
+[simulador HTTP /metrics] --coleta--> [Prometheus] --regras--> [Alertmanager]
                                               |
-                                              +--> [Grafana dashboard]
+                                              +--> [Painel Grafana]
 ```
 
 - **Prometheus:** http://localhost:9090
@@ -63,7 +63,7 @@ Aguarde o intervalo de coleta (15 s) e o período `for` das regras (30 s). Veja 
 
 **Importante:** o cenário `down` simula falha de negócio por meio de uma métrica. Ele não derruba o container nem o endpoint `/metrics`; assim, a telemetria continua disponível para análise.
 
-## Runbooks
+## Guias operacionais (runbooks)
 
 - [Serviço indisponível](runbooks/service-down.md)
 - [Latência elevada](runbooks/high-latency.md)
@@ -74,7 +74,7 @@ Aguarde o intervalo de coleta (15 s) e o período `for` das regras (30 s). Veja 
 - [INC-2026-001: chamado fictício completo](incidents/INC-2026-001.md)
 - [RCA-2026-001: análise de causa raiz](incidents/RCA-2026-001.md)
 - [Matriz de severidade, SLA e escalonamento](incidents/SEVERITY-SLA.md)
-- [Template reutilizável de incidente](incidents/TEMPLATE.md)
+- [Modelo reutilizável de incidente](incidents/TEMPLATE.md)
 
 A linha do tempo, os tempos de atendimento e as metas de SLA são **hipotéticos**. Não são medições de sistemas empresariais.
 
@@ -88,7 +88,7 @@ docker compose run --rm --no-deps prometheus promtool check rules /etc/prometheu
 docker compose run --rm --no-deps prometheus promtool check config /etc/prometheus/prometheus.yml
 ```
 
-No CI, os testes Python, testes HTTP com servidor local, validação de configurações, build Docker e smoke test do container em execução são automatizados. O smoke test simula indisponibilidade e recuperação; a verificação visual de alertas no Grafana/Prometheus continua sendo uma etapa manual.
+No CI, os testes Python, testes HTTP com servidor local, validação de configurações, construção da imagem Docker e teste de verificação do contêiner em execução são automatizados. O teste de verificação simula indisponibilidade e recuperação; a verificação visual de alertas no Grafana/Prometheus continua sendo uma etapa manual.
 
 ## Segurança e limites
 
