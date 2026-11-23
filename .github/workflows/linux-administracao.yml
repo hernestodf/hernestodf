@@ -1,0 +1,37 @@
+name: Laboratorio Linux - Testes e Validacao
+on:
+  push:
+    paths:
+      - 'labs/linux-administracao/**'
+      - '.github/workflows/linux-administracao.yml'
+  pull_request:
+    paths:
+      - 'labs/linux-administracao/**'
+      - '.github/workflows/linux-administracao.yml'
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: labs/linux-administracao
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Validar sintaxe Bash
+        run: bash -n scripts/*.sh
+      - name: Analisar scripts com ShellCheck
+        run: shellcheck scripts/*.sh
+      - name: Testes automatizados
+        run: python -m unittest discover -s tests -v
+      - name: Executar diagnostico e backup
+        run: |
+          bash scripts/diagnostico.sh
+          bash scripts/backup-demo.sh
+      - name: Construir imagem Docker
+        run: docker build -t laboratorio-linux:ci .
+      - name: Testar conteiner isolado
+        run: docker run --rm --network none --read-only --tmpfs /tmp:rw,nosuid,nodev --cap-drop ALL laboratorio-linux:ci
