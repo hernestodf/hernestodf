@@ -35,4 +35,6 @@ jobs:
         run: |
           docker run --rm -v "$PWD/alertmanager:/etc/alertmanager:ro" --entrypoint /bin/amtool prom/alertmanager:v0.28.1 check-config /etc/alertmanager/alertmanager.yml
       - name: Build simulator image
+        env:
+          GRAFANA_ADMIN_PASSWORD: ci-only-not-a-real-secret
         run: docker compose build simulator
