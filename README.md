@@ -85,3 +85,7 @@ Os laboratórios são exemplos para portfólio; a execução do pipeline e os te
 ---
 
 *Tecnologia aplicada para resolver problemas reais: da operação de infraestrutura ao desenvolvimento de software.*
+
+### Monitoramento Zabbix
+
+- [Laboratório Zabbix](labs/zabbix-monitoramento/README.md) — Zabbix 7.0, PostgreSQL, Docker Compose, agente, incidentes e testes do simulador.
