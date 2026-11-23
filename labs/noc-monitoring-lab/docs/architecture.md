@@ -1,4 +1,4 @@
-# Arquitetura do NOC Monitoring Lab
+# Arquitetura do Laboratório de Monitoramento NOC
 
 > Ambiente didático e isolado, com dados fictícios. As portas são publicadas apenas no loopback do computador que executa o Compose.
 
@@ -25,9 +25,9 @@ flowchart LR
 | Simulador Python | Exporta métricas e alterna cenários | `/metrics`, `/state` |
 | Prometheus | Coleta métricas e avalia regras | Targets, Graph e Alerts |
 | Alertmanager | Agrupa alertas recebidos, sem notificações externas | Página de alertas |
-| Grafana | Visualiza disponibilidade, latência e erros | Dashboard provisionado |
+| Grafana | Visualiza disponibilidade, latência e erros | Painel configurado automaticamente |
 | Runbooks | Orientam diagnóstico, escalonamento e recuperação | Documentos Markdown |
-| GitHub Actions | Executa testes, validações e smoke test Docker | Workflow NOC Monitoring Lab CI |
+| GitHub Actions | Executa testes, validações e smoke test Docker | Fluxo de integração contínua do laboratório |
 
 ## Limites e segurança
 
