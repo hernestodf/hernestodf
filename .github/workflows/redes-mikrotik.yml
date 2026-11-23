@@ -1,0 +1,31 @@
+name: Laboratorio Redes e MikroTik - CI
+on:
+  push:
+    paths:
+      - 'labs/redes-mikrotik/**'
+      - '.github/workflows/redes-mikrotik.yml'
+  pull_request:
+    paths:
+      - 'labs/redes-mikrotik/**'
+      - '.github/workflows/redes-mikrotik.yml'
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: labs/redes-mikrotik
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Validar sintaxe Python
+        run: python -m compileall -q scripts tests
+      - name: Testar enderecamento e cenarios invalidos
+        run: python -m unittest discover -s tests -v
+      - name: Validar plano IP ficticio
+        run: python scripts/validar_rede.py
+      - name: Validar JSON
+        run: python -m json.tool rede.json > /dev/null
