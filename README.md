@@ -58,6 +58,15 @@ Ferramentas para estruturar instruções, memória e automações de agentes de 
 
 > Alguns sistemas empresariais nos quais atuo são privados. Os repositórios públicos acima apresentam projetos e tecnologias que posso compartilhar.
 
+## 🧪 Laboratórios de infraestrutura e backend
+
+Projetos demonstrativos **independentes**, com dados fictícios e sem código de produção:
+
+- 🐳 **[ProFox DevOps Lab](labs/profox-devops-lab/README.md)** — Docker, Compose, health checks, Go e pipeline CI.
+- 🐹 **[ProFox Go Backend](labs/profox-go-backend/README.md)** — API REST com Go, PostgreSQL, SQL explícito, testes e Docker.
+
+Os laboratórios são exemplos para portfólio; a execução do pipeline e os testes devem ser verificados no GitHub Actions.
+
 ## 📚 Desenvolvimento profissional
 
 - **Ciência da Computação** — graduação em andamento.
