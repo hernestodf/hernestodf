@@ -1,0 +1,7 @@
+2026-11-23T10:00:00Z INFO servico=demo evento=inicializacao mensagem="serviço iniciado"
+2026-11-23T10:01:00Z INFO servico=demo evento=consulta mensagem="requisição atendida"
+2026-11-23T10:02:00Z WARNING servico=demo evento=latencia mensagem="resposta acima do limite"
+2026-11-23T10:03:00Z ERROR servico=demo evento=conexao mensagem="conexão fictícia recusada"
+2026-11-23T10:04:00Z ERROR servico=demo evento=conexao mensagem="conexão fictícia recusada"
+2026-11-23T10:05:00Z CRITICAL servico=demo evento=indisponibilidade mensagem="serviço fictício indisponível"
+2026-11-23T10:06:00Z INFO servico=demo evento=recuperacao mensagem="serviço restaurado"
