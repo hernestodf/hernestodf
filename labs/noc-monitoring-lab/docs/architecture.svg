@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" role="img" aria-labelledby="title desc">
+<title id="title">NOC Monitoring Lab — Arquitetura</title>
+<desc id="desc">Operador simula incidentes no serviço Python. Prometheus coleta métricas, envia alertas ao Alertmanager e alimenta o Grafana. Runbooks documentam investigação e recuperação.</desc>
+<rect width="1200" height="580" rx="24" fill="#0b1220"/>
+<text x="60" y="68" fill="#f8fafc" font-family="Arial,sans-serif" font-size="34" font-weight="700">NOC Monitoring Lab</text>
+<text x="60" y="102" fill="#94a3b8" font-family="Arial,sans-serif" font-size="18">Observabilidade • Alertas • Incidentes fictícios • Runbooks</text>
+<g font-family="Arial,sans-serif">
+<rect x="55" y="180" width="205" height="145" rx="16" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+<text x="157" y="230" text-anchor="middle" fill="#dbeafe" font-size="24" font-weight="700">Operador NOC</text>
+<text x="157" y="263" text-anchor="middle" fill="#cbd5e1" font-size="16">Simular / investigar</text>
+<text x="157" y="290" text-anchor="middle" fill="#94a3b8" font-size="14">localhost</text>
+<rect x="340" y="180" width="215" height="145" rx="16" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+<text x="447" y="228" text-anchor="middle" fill="#d1fae5" font-size="24" font-weight="700">Python</text>
+<text x="447" y="261" text-anchor="middle" fill="#cbd5e1" font-size="16">Simulador /metrics</text>
+<text x="447" y="290" text-anchor="middle" fill="#94a3b8" font-size="14">:8000</text>
+<rect x="635" y="180" width="225" height="145" rx="16" fill="#1e293b" stroke="#fbbf24" stroke-width="2"/>
+<text x="747" y="228" text-anchor="middle" fill="#fef3c7" font-size="24" font-weight="700">Prometheus</text>
+<text x="747" y="261" text-anchor="middle" fill="#cbd5e1" font-size="16">Scrape + regras</text>
+<text x="747" y="290" text-anchor="middle" fill="#94a3b8" font-size="14">:9090</text>
+<rect x="940" y="135" width="210" height="135" rx="16" fill="#1e293b" stroke="#f87171" stroke-width="2"/>
+<text x="1045" y="183" text-anchor="middle" fill="#fee2e2" font-size="22" font-weight="700">Alertmanager</text>
+<text x="1045" y="214" text-anchor="middle" fill="#cbd5e1" font-size="16">Alertas internos</text>
+<text x="1045" y="240" text-anchor="middle" fill="#94a3b8" font-size="14">:9093</text>
+<rect x="940" y="310" width="210" height="135" rx="16" fill="#1e293b" stroke="#c084fc" stroke-width="2"/>
+<text x="1045" y="358" text-anchor="middle" fill="#f3e8ff" font-size="24" font-weight="700">Grafana</text>
+<text x="1045" y="390" text-anchor="middle" fill="#cbd5e1" font-size="16">Dashboard</text>
+<text x="1045" y="416" text-anchor="middle" fill="#94a3b8" font-size="14">:3000</text>
+<rect x="345" y="420" width="500" height="100" rx="16" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+<text x="595" y="462" text-anchor="middle" fill="#f8fafc" font-size="23" font-weight="700">Runbooks • Incidente • RCA</text>
+<text x="595" y="490" text-anchor="middle" fill="#cbd5e1" font-size="16">Documentação operacional e escalonamento</text>
+<g fill="none" stroke-width="4" stroke-linecap="round">
+<path d="M260 252 H340" stroke="#60a5fa"/>
+<path d="M555 252 H635" stroke="#34d399"/>
+<path d="M860 230 H900 V202 H940" stroke="#f87171"/>
+<path d="M860 280 H900 V377 H940" stroke="#c084fc"/>
+<path d="M157 325 V470 H345" stroke="#64748b" stroke-dasharray="8 8"/>
+</g>
+<g fill="#60a5fa"><path d="M330 244 l10 8 -10 8z"/></g>
+<g fill="#34d399"><path d="M625 244 l10 8 -10 8z"/></g>
+<g fill="#f87171"><path d="M930 194 l10 8 -10 8z"/></g>
+<g fill="#c084fc"><path d="M930 369 l10 8 -10 8z"/></g>
+<text x="295" y="237" text-anchor="middle" fill="#94a3b8" font-size="13">POST</text>
+<text x="595" y="237" text-anchor="middle" fill="#94a3b8" font-size="13">Scrape</text>
+</g>
+<text x="60" y="555" fill="#64748b" font-family="Arial,sans-serif" font-size="15">Projeto demonstrativo independente — nenhuma conexão com ambientes reais</text>
+</svg>
