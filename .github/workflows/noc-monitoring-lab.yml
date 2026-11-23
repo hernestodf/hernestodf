@@ -16,7 +16,7 @@ jobs:
         working-directory: labs/noc-monitoring-lab
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
       - name: Syntax and unit tests
@@ -34,7 +34,29 @@ jobs:
       - name: Validate Alertmanager config
         run: |
           docker run --rm -v "$PWD/alertmanager:/etc/alertmanager:ro" --entrypoint /bin/amtool prom/alertmanager:v0.28.1 check-config /etc/alertmanager/alertmanager.yml
+      - name: HTTP integration tests
+        run: python -m unittest discover -s simulator/tests -p 'test_http.py' -v
       - name: Build simulator image
         env:
           GRAFANA_ADMIN_PASSWORD: ci-only-not-a-real-secret
         run: docker compose build simulator
+      - name: Run smoke test against Docker container
+        env:
+          GRAFANA_ADMIN_PASSWORD: ci-only-not-a-real-secret
+        run: |
+          docker compose up -d --no-deps simulator
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8000/healthz >/dev/null; then break; fi
+            sleep 1
+          done
+          sh scripts/smoke.sh
+      - name: Collect container logs on failure
+        if: failure()
+        env:
+          GRAFANA_ADMIN_PASSWORD: ci-only-not-a-real-secret
+        run: docker compose logs --no-color --tail=100 simulator
+      - name: Stop containers
+        if: always()
+        env:
+          GRAFANA_ADMIN_PASSWORD: ci-only-not-a-real-secret
+        run: docker compose down --remove-orphans
