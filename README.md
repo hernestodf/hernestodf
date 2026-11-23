@@ -62,6 +62,7 @@ Ferramentas para estruturar instruções, memória e automações de agentes de 
 
 Projetos demonstrativos **independentes**, com dados fictícios e sem código de produção:
 
+- 📡 **[NOC Monitoring Lab](labs/noc-monitoring-lab/README.md)** — Prometheus, Grafana, Alertmanager, incidentes simulados, runbooks e CI.
 - 🐳 **[ProFox DevOps Lab](labs/profox-devops-lab/README.md)** — Docker, Compose, health checks, Go e pipeline CI.
 - 🐹 **[ProFox Go Backend](labs/profox-go-backend/README.md)** — API REST com Go, PostgreSQL, SQL explícito, testes e Docker.
 
