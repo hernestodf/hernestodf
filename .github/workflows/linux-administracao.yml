@@ -25,8 +25,12 @@ jobs:
         run: bash -n scripts/*.sh
       - name: Analisar scripts com ShellCheck
         run: shellcheck scripts/*.sh
-      - name: Testes automatizados
-        run: python -m unittest discover -s tests -v
+      - name: Testes automatizados e analise de logs
+        run: |
+          python -m compileall -q scripts tests
+          python -m unittest discover -s tests -v
+          python scripts/analisar_logs.py > /tmp/relatorio-linux.json
+          python -m json.tool /tmp/relatorio-linux.json > /dev/null
       - name: Executar diagnostico e backup
         run: |
           bash scripts/diagnostico.sh
