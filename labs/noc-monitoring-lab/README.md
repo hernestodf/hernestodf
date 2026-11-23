@@ -69,12 +69,13 @@ Aguarde o intervalo de coleta (15 s) e o período `for` das regras (30 s). Veja 
 
 ```bash
 python3 -m unittest discover -s simulator/tests -v
+sh scripts/smoke.sh # execute após docker compose up -d
 docker compose config -q
 docker compose run --rm --no-deps prometheus promtool check rules /etc/prometheus/alerts.yml
 docker compose run --rm --no-deps prometheus promtool check config /etc/prometheus/prometheus.yml
 ```
 
-No CI, os testes Python e a validação de configuração são executados automaticamente. Um teste de integração do ambiente Docker em execução pode ser feito manualmente com os comandos acima.
+No CI, os testes Python, testes HTTP com servidor local, validação de configurações, build Docker e smoke test do container em execução são automatizados. O smoke test simula indisponibilidade e recuperação; a verificação visual de alertas no Grafana/Prometheus continua sendo uma etapa manual.
 
 ## Segurança e limites
 
