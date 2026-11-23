@@ -6,7 +6,7 @@ Laboratório público e **100% fictício** para demonstrar monitoramento de serv
 
 ![Diagrama de arquitetura do Laboratório de Monitoramento NOC](docs/architecture.svg)
 
-**Apresentação visual:** [Visão geral para recrutadores](docs/portfolio-presentation.md) · [Arquitetura](docs/architecture.md) · [Como obter capturas reais](docs/evidence-guide.md)
+**[Resumo rápido do projeto](RESUMO.md)** · **Apresentação visual:** [Visão geral para recrutadores](docs/portfolio-presentation.md) · [Arquitetura](docs/architecture.md) · [Como obter capturas reais](docs/evidence-guide.md)
 
 ## Arquitetura
 
