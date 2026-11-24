@@ -1,0 +1,26 @@
+name: Lab Microsoft 365 Azure AWS
+on:
+  push:
+    paths:
+      - 'labs/cloud-m365-azure-aws/**'
+      - '.github/workflows/cloud-m365-azure-aws.yml'
+  pull_request:
+    paths:
+      - 'labs/cloud-m365-azure-aws/**'
+      - '.github/workflows/cloud-m365-azure-aws.yml'
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: labs/cloud-m365-azure-aws/
+    steps:
+      - uses: actions/checkout@v4
+      - name: Testes Python
+        run: python3 -m unittest -v
+      - name: Auditoria ficticia
+        run: python3 auditar.py
+      - name: Inventario PowerShell
+        run: pwsh -NoProfile -File inventario.ps1
