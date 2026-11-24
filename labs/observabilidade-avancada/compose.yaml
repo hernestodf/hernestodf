@@ -1,0 +1,12 @@
+services:
+  loki:
+    image: grafana/loki:3.4.2
+    command: ["-config.file=/etc/loki/local-config.yaml"]
+    ports: ["127.0.0.1:13100:3100"]
+  collector:
+    image: otel/opentelemetry-collector-contrib:0.121.0
+    command: ["--config=/etc/otelcol-contrib/config.yaml"]
+    volumes:
+      - ./collector.yaml:/etc/otelcol-contrib/config.yaml:ro
+    ports: ["127.0.0.1:14318:4318"]
+    depends_on: [loki]
