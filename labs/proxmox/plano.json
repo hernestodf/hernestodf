@@ -1,0 +1,15 @@
+{
+  "ram_disponivel_mib": 6144,
+  "instancias": [
+    {
+      "id": 100,
+      "tipo": "VM",
+      "ram_mib": 2048
+    },
+    {
+      "id": 101,
+      "tipo": "LXC",
+      "ram_mib": 1024
+    }
+  ]
+}
