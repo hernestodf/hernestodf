@@ -70,11 +70,19 @@ Projetos demonstrativos **independentes**, com dados fictícios e sem código de
 
 Os laboratórios são exemplos para portfólio; a execução do pipeline e os testes devem ser verificados no GitHub Actions.
 
+### Operações avançadas e automação
+
+- [Automação de Jobs e Steps](labs/jobs-steps/README.md) — laboratório executável com testes e CI.
+- [SQL Troubleshooting](labs/sql-troubleshooting/README.md) — laboratório executável com testes e CI.
+- [Terraform e Ansible](labs/terraform-ansible/README.md) — laboratório executável com testes e CI.
+- [Backup e Disaster Recovery](labs/disaster-recovery/README.md) — laboratório executável com testes e CI.
+- [Kubernetes](labs/kubernetes/README.md) — laboratório executável com testes e CI.
+
 ## 🧠 Mapa mental e trilha de estudos
 
 [![Mapa mental de Operações de TI](estudos/mapa-mental.svg)](estudos/README.md)
 
-[**Abrir guia de estudos completo**](estudos/README.md) — nove trilhas com analogias, conceitos, comandos, exercícios e perguntas de entrevista conectadas aos dez laboratórios.
+[**Abrir guia de estudos completo**](estudos/README.md) — 14 trilhas com analogias, conceitos, comandos, exercícios e perguntas de entrevista conectadas aos 15 laboratórios.
 
 ## 📚 Desenvolvimento profissional
 
