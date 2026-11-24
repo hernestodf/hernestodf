@@ -1,0 +1,25 @@
+name: Lab terraform-ansible
+on:
+  push:
+    paths: ['labs/terraform-ansible/**', '.github/workflows/terraform-ansible.yml']
+  pull_request:
+    paths: ['labs/terraform-ansible/**', '.github/workflows/terraform-ansible.yml']
+permissions:
+  contents: read
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: labs/terraform-ansible
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'ansible-core==2.19.*'
+      - run: bash testar.sh
