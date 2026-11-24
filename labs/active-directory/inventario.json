@@ -1,0 +1,16 @@
+{
+  "ous": [
+    "TI",
+    "Operacoes"
+  ],
+  "usuarios": [
+    {
+      "login": "ana.demo",
+      "ou": "TI"
+    },
+    {
+      "login": "bruno.demo",
+      "ou": "Operacoes"
+    }
+  ]
+}
