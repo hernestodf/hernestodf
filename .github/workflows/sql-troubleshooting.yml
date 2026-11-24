@@ -1,0 +1,26 @@
+name: Lab sql-troubleshooting
+on:
+  push:
+    paths: ['labs/sql-troubleshooting/**', '.github/workflows/sql-troubleshooting.yml']
+  pull_request:
+    paths: ['labs/sql-troubleshooting/**', '.github/workflows/sql-troubleshooting.yml']
+permissions:
+  contents: read
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: labs/sql-troubleshooting
+    steps:
+      - uses: actions/checkout@v4
+      - name: Executar testes
+        run: |
+          docker compose up -d --wait
+          docker compose exec -T db psql -U demo -d demo -v ON_ERROR_STOP=1 < laboratorio.sql
+          docker compose exec -T db psql -U demo -d demo -v ON_ERROR_STOP=1 < testes.sql
+          bash test_lock.sh
+      - name: Encerrar banco descartavel
+        if: always()
+        run: docker compose down -v
