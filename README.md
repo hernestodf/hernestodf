@@ -70,6 +70,12 @@ Projetos demonstrativos **independentes**, com dados fictícios e sem código de
 
 Os laboratórios são exemplos para portfólio; a execução do pipeline e os testes devem ser verificados no GitHub Actions.
 
+## 🧠 Mapa mental e trilha de estudos
+
+[![Mapa mental de Operações de TI](estudos/mapa-mental.svg)](estudos/README.md)
+
+[**Abrir guia de estudos completo**](estudos/README.md) — nove trilhas com analogias, conceitos, comandos, exercícios e perguntas de entrevista conectadas aos dez laboratórios.
+
 ## 📚 Desenvolvimento profissional
 
 - **Ciência da Computação** — graduação em andamento.
