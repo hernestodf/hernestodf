@@ -78,11 +78,22 @@ Os laboratórios são exemplos para portfólio; a execução do pipeline e os te
 - [Backup e Disaster Recovery](labs/disaster-recovery/README.md) — laboratório executável com testes e CI.
 - [Kubernetes](labs/kubernetes/README.md) — laboratório executável com testes e CI.
 
+### Ferramentas corporativas e segurança
+
+- [SIEM e Wazuh](labs/wazuh-siem/README.md) — exercício didático com testes e CI.
+- [DevSecOps](labs/devsecops/README.md) — exercício didático com testes e CI.
+- [Keycloak e identidade](labs/keycloak-iam/README.md) — exercício didático com testes e CI.
+- [GLPI e ITIL](labs/glpi-servicedesk/README.md) — exercício didático com testes e CI.
+- [Nginx e HAProxy](labs/proxy-balanceamento/README.md) — exercício didático com testes e CI.
+- [RabbitMQ e Redis](labs/mensageria-cache/README.md) — exercício didático com testes e CI.
+- [Jenkins e GitLab CI](labs/jenkins-gitlab-ci/README.md) — exercício didático com testes e CI.
+- [Loki e OpenTelemetry](labs/observabilidade-avancada/README.md) — exercício didático com testes e CI.
+
 ## 🧠 Mapa mental e trilha de estudos
 
 [![Mapa mental de Operações de TI](estudos/mapa-mental.svg)](estudos/README.md)
 
-[**Abrir guia de estudos completo**](estudos/README.md) — 14 trilhas com analogias, conceitos, comandos, exercícios e perguntas de entrevista conectadas aos 15 laboratórios.
+[**Abrir guia de estudos completo**](estudos/README.md) — 22 trilhas com analogias, conceitos, comandos, exercícios e perguntas de entrevista conectadas aos 23 laboratórios.
 
 ## 📚 Desenvolvimento profissional
 
