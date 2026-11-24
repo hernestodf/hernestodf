@@ -150,7 +150,87 @@ Leia a analogia, explique o conceito sem consultar o texto, execute o laboratór
 
 [Laboratório correspondente](../labs/kubernetes/README.md)
 
-## Revisão de 45 dias
+## 15. SIEM e Wazuh
+
+**Entenda:** Um SIEM é como uma central de segurança: correlaciona eventos para ajudar na triagem. Cinco falhas SSH em uma janela de 60 segundos podem sugerir atividade suspeita, mas não provam ataque. Uma regra relaciona eventos, origem e intervalo.
+
+**Pratique:** Execute os testes do correlacionador; altere a janela e a origem dos eventos. No Wazuh real, valide decodificação e regra com wazuh-logtest em ambiente autorizado.
+
+**Pergunta de entrevista:** Qual a diferença entre alerta, falso positivo e incidente?
+
+[Laboratório correspondente](../labs/wazuh-siem/README.md)
+
+## 16. DevSecOps
+
+**Entenda:** Segurança precisa integrar o fluxo de entrega. Gitleaks identifica padrões de segredos e Trivy avalia configurações e outros riscos conforme os scanners escolhidos. Um resultado limpo não prova ausência de vulnerabilidade.
+
+**Pratique:** Execute bash testar.sh e compare a configuração aceita com a fixture root detectada. Nunca publique segredos para testar um scanner.
+
+**Pergunta de entrevista:** Qual a diferença entre escanear configuração, dependências e segredos?
+
+[Laboratório correspondente](../labs/devsecops/README.md)
+
+## 17. Keycloak e identidade
+
+**Entenda:** OAuth 2.0 delega autorização; OpenID Connect adiciona identidade. Um realm delimita configuração de identidade, cliente é uma aplicação, token representa autorização conforme o fluxo. SSO permite reutilizar uma sessão de autenticação entre aplicações.
+
+**Pratique:** Execute o Compose e testar.py. Compare descoberta OIDC, obtenção de token de serviço e rejeição de segredo inválido. Para login humano, pratique Authorization Code com PKCE separadamente.
+
+**Pergunta de entrevista:** Qual a diferença entre autenticação e autorização? Quando usar client credentials?
+
+[Laboratório correspondente](../labs/keycloak-iam/README.md)
+
+## 18. GLPI e ITIL
+
+**Entenda:** Uma central de serviços organiza chamados e ativos. Impacto e urgência ajudam a definir prioridade. SLA expressa compromisso de serviço, enquanto inventário relaciona equipamentos e responsáveis. Um incidente não é necessariamente uma requisição.
+
+**Pratique:** Execute sla.py e os testes de prazo. No GLPI autorizado, configure perfis, entidades, ativos e chamados fictícios; compare o SLA com o calendário configurado.
+
+**Pergunta de entrevista:** Como diferenciar incidente, requisição e problema?
+
+[Laboratório correspondente](../labs/glpi-servicedesk/README.md)
+
+## 19. Nginx e HAProxy
+
+**Entenda:** Um proxy reverso recebe requisições em nome de servidores internos. O balanceador distribui carga entre backends; health checks ajudam a retirar instâncias indisponíveis. Isso não elimina um ponto único de falha no próprio balanceador.
+
+**Pratique:** Execute o Compose e testar.sh. Observe as respostas dos dois backends e pare um deles para verificar continuidade.
+
+**Pergunta de entrevista:** Qual a diferença entre proxy reverso e balanceamento de carga?
+
+[Laboratório correspondente](../labs/proxy-balanceamento/README.md)
+
+## 20. RabbitMQ e Redis
+
+**Entenda:** Fila desacopla produtor e consumidor. Confirmação de processamento e idempotência ajudam a lidar com falhas e entregas repetidas. Cache reduz latência e carga; TTL limita a vida útil de uma entrada.
+
+**Pratique:** Execute testar.py para publicar e consumir mensagem fictícia pela API de gerenciamento e verificar expiração de cache Redis.
+
+**Pergunta de entrevista:** Por que uma fila não garante exatamente uma vez? Quando invalidar cache?
+
+[Laboratório correspondente](../labs/mensageria-cache/README.md)
+
+## 21. Jenkins e GitLab CI
+
+**Entenda:** Pipeline descreve etapas reproduzíveis. Agentes ou runners executam tarefas; artefatos registram resultados de build. Configurações declarativas variam por plataforma, mas scripts portáveis reduzem duplicação.
+
+**Pratique:** Execute pipeline.sh; revise Jenkinsfile e .gitlab-ci.yml. Em instâncias de teste, rode o mesmo pipeline e confira o artefato.
+
+**Pergunta de entrevista:** Qual a diferença entre runner, job, stage e artefato?
+
+[Laboratório correspondente](../labs/jenkins-gitlab-ci/README.md)
+
+## 22. Loki e OpenTelemetry
+
+**Entenda:** OpenTelemetry padroniza coleta e exportação de telemetria. Collector recebe, processa e encaminha sinais. Loki armazena logs consultados por LogQL. Logs, métricas e traces são sinais complementares; este lab cobre logs OTLP.
+
+**Pratique:** Execute o Compose e testar.py; acompanhe um evento fictício da entrada OTLP até a consulta no Loki. Experimente filtros com rótulos de baixa cardinalidade.
+
+**Pergunta de entrevista:** Qual a diferença entre log, métrica e trace?
+
+[Laboratório correspondente](../labs/observabilidade-avancada/README.md)
+
+## Revisão de 60 dias
 
 | Período | Tema |
 |---|---|
@@ -167,4 +247,12 @@ Leia a analogia, explique o conceito sem consultar o texto, execute o laboratór
 | Dias 36–38 | Terraform e Ansible |
 | Dias 39–41 | Disaster Recovery |
 | Dias 42–44 | Kubernetes |
-| Dia 45 | Revisão integrada e entrevista |
+| Dias 45–46 | SIEM e Wazuh |
+| Dias 47–48 | DevSecOps |
+| Dias 49–50 | Keycloak |
+| Dias 51–52 | GLPI e ITIL |
+| Dias 53–54 | Nginx e HAProxy |
+| Dias 55–56 | RabbitMQ e Redis |
+| Dia 57 | Jenkins e GitLab CI |
+| Dias 58–59 | Loki e OpenTelemetry |
+| Dia 60 | Revisão integrada e entrevista |
