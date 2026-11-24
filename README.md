@@ -89,3 +89,9 @@ Os laboratórios são exemplos para portfólio; a execução do pipeline e os te
 ### Monitoramento Zabbix
 
 - [Laboratório Zabbix](labs/zabbix-monitoramento/README.md) — Zabbix 7.0, PostgreSQL, Docker Compose, agente, incidentes e testes do simulador.
+
+### Administração e virtualização
+
+- [Active Directory e PowerShell](labs/active-directory/README.md) — inventário fictício, OUs, GPO e diagnóstico.
+- [Hardening Linux](labs/hardening-linux/README.md) — auditoria didática de SSH e permissões.
+- [Proxmox VE](labs/proxmox/README.md) — planejamento de VMs/LXC, capacidade, backup e recuperação.
