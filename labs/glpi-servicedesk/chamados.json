@@ -1,0 +1,16 @@
+[
+  {
+    "id": "INC-DEMO-01",
+    "ativo": "PC-DEMO-01",
+    "prioridade": "P1",
+    "aberto": "2026-01-01T09:00:00Z",
+    "resolvido": "2026-01-01T11:00:00Z"
+  },
+  {
+    "id": "INC-DEMO-02",
+    "ativo": "SW-DEMO-02",
+    "prioridade": "P2",
+    "aberto": "2026-01-01T09:00:00Z",
+    "resolvido": "2026-01-01T18:00:00Z"
+  }
+]
