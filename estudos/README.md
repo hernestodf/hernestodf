@@ -1,6 +1,6 @@
-# ProFox Academy — Mapa mental e guia de estudos
+# Minha jornada de aprendizado em TI — Hernesto Filho
 
-Material independente de revisão prática. Inspirado em aprendizagem visual, analogias e recuperação ativa do conhecimento.
+Material pessoal de estudo e prática técnica de Hernesto Filho. Os laboratórios são iniciativas independentes de aprendizado, sem vínculo institucional com meus empregadores. Inspirado em aprendizagem visual, analogias e recuperação ativa do conhecimento.
 
 ![Mapa mental de Operações de TI](mapa-mental.svg)
 
