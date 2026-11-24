@@ -1,0 +1,22 @@
+name: Lab hardening-linux
+on:
+  push:
+    paths:
+      - 'labs/hardening-linux/**'
+      - '.github/workflows/hardening-linux.yml'
+  pull_request:
+    paths:
+      - 'labs/hardening-linux/**'
+      - '.github/workflows/hardening-linux.yml'
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: labs/hardening-linux/
+    steps:
+      - uses: actions/checkout@v4
+      - name: Testes offline
+        run: python3 -m unittest -v && python3 auditar.py
