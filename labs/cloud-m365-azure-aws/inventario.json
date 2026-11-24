@@ -1,0 +1,39 @@
+{
+  "usuarios": [
+    {
+      "login": "ana@example.test",
+      "licenca": "M365-demo",
+      "mfa": true,
+      "admin": false
+    },
+    {
+      "login": "operador@example.test",
+      "licenca": "M365-demo",
+      "mfa": false,
+      "admin": true
+    }
+  ],
+  "recursos": [
+    {
+      "provedor": "Azure",
+      "tipo": "VM",
+      "nome": "vm-demo",
+      "armazenamento_publico": false,
+      "administracao_aberta": false
+    },
+    {
+      "provedor": "AWS",
+      "tipo": "S3",
+      "nome": "bucket-demo",
+      "armazenamento_publico": true,
+      "administracao_aberta": false
+    },
+    {
+      "provedor": "AWS",
+      "tipo": "EC2",
+      "nome": "ec2-demo",
+      "armazenamento_publico": false,
+      "administracao_aberta": true
+    }
+  ]
+}
