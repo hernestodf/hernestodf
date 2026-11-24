@@ -1,0 +1,18 @@
+name: Lab jenkins-gitlab-ci
+on:
+  push:
+    paths: ['labs/jenkins-gitlab-ci/**', '.github/workflows/jenkins-gitlab-ci.yml']
+  pull_request:
+    paths: ['labs/jenkins-gitlab-ci/**', '.github/workflows/jenkins-gitlab-ci.yml']
+permissions:
+  contents: read
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: labs/jenkins-gitlab-ci
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash pipeline.sh
