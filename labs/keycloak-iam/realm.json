@@ -1,0 +1,16 @@
+{
+  "realm": "profox-demo",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "servico-demo",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "somente-lab",
+      "serviceAccountsEnabled": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false
+    }
+  ]
+}
