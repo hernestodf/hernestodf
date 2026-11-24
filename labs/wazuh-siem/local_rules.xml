@@ -1,0 +1,7 @@
+<group name="local,sshd,">
+  <rule id="100110" level="10" frequency="5" timeframe="60">
+    <if_matched_sid>5716</if_matched_sid>
+    <same_source_ip />
+    <description>Falhas SSH repetidas da mesma origem - exemplo didatico</description>
+  </rule>
+</group>
