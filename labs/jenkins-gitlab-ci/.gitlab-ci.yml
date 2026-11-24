@@ -1,0 +1,10 @@
+image: python:3.12-slim
+stages: [build]
+validar:
+  stage: build
+  script:
+    - bash pipeline.sh
+  artifacts:
+    paths:
+      - dist/app.zip
+    expire_in: 1 week
