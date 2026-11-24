@@ -1,0 +1,18 @@
+name: Lab glpi-servicedesk
+on:
+  push:
+    paths: ['labs/glpi-servicedesk/**', '.github/workflows/glpi-servicedesk.yml']
+  pull_request:
+    paths: ['labs/glpi-servicedesk/**', '.github/workflows/glpi-servicedesk.yml']
+permissions:
+  contents: read
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: labs/glpi-servicedesk
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest -v && python3 sla.py
