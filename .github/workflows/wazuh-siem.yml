@@ -1,0 +1,18 @@
+name: Lab wazuh-siem
+on:
+  push:
+    paths: ['labs/wazuh-siem/**', '.github/workflows/wazuh-siem.yml']
+  pull_request:
+    paths: ['labs/wazuh-siem/**', '.github/workflows/wazuh-siem.yml']
+permissions:
+  contents: read
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: labs/wazuh-siem
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest -v && python3 correlacionar.py
