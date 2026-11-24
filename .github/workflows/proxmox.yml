@@ -1,0 +1,22 @@
+name: Lab proxmox
+on:
+  push:
+    paths:
+      - 'labs/proxmox/**'
+      - '.github/workflows/proxmox.yml'
+  pull_request:
+    paths:
+      - 'labs/proxmox/**'
+      - '.github/workflows/proxmox.yml'
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: labs/proxmox/
+    steps:
+      - uses: actions/checkout@v4
+      - name: Testes offline
+        run: python3 -m unittest -v && python3 validar.py
