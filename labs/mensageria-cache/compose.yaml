@@ -1,0 +1,9 @@
+services:
+  rabbit:
+    image: rabbitmq:4.1-management
+    environment:
+      RABBITMQ_DEFAULT_USER: demo
+      RABBITMQ_DEFAULT_PASS: somente-lab
+    ports: ["127.0.0.1:15682:15672"]
+  redis:
+    image: redis:7-alpine
