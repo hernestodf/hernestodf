@@ -1,0 +1,21 @@
+name: Lab kubernetes
+on:
+  push:
+    paths: ['labs/kubernetes/**', '.github/workflows/kubernetes.yml']
+  pull_request:
+    paths: ['labs/kubernetes/**', '.github/workflows/kubernetes.yml']
+permissions:
+  contents: read
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: labs/kubernetes
+    steps:
+      - uses: actions/checkout@v4
+      - uses: helm/kind-action@v1
+        with:
+          cluster_name: profox-lab
+      - run: bash testar.sh
