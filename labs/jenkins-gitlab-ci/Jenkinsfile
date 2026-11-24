@@ -1,0 +1,11 @@
+pipeline {
+  agent any
+  stages {
+    stage('Testar e empacotar') {
+      steps { sh 'bash labs/jenkins-gitlab-ci/pipeline.sh' }
+    }
+  }
+  post {
+    success { archiveArtifacts artifacts: 'labs/jenkins-gitlab-ci/dist/app.zip', fingerprint: true }
+  }
+}
