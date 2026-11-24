@@ -95,3 +95,7 @@ Os laboratórios são exemplos para portfólio; a execução do pipeline e os te
 - [Active Directory e PowerShell](labs/active-directory/README.md) — inventário fictício, OUs, GPO e diagnóstico.
 - [Hardening Linux](labs/hardening-linux/README.md) — auditoria didática de SSH e permissões.
 - [Proxmox VE](labs/proxmox/README.md) — planejamento de VMs/LXC, capacidade, backup e recuperação.
+
+### Computação em nuvem e Microsoft 365
+
+- [Microsoft 365, Entra ID, Azure e AWS](labs/cloud-m365-azure-aws/README.md) — inventário fictício, auditoria de identidade e recursos cloud, PowerShell e Python.
