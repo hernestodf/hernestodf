@@ -89,7 +89,7 @@ Os laboratórios são exemplos para portfólio; a execução do pipeline e os te
 - [Jenkins e GitLab CI](labs/jenkins-gitlab-ci/README.md) — exercício didático com testes e CI.
 - [Loki e OpenTelemetry](labs/observabilidade-avancada/README.md) — exercício didático com testes e CI.
 
-## 🧠 Mapa mental e trilha de estudos
+## 🧠 Minha jornada de aprendizado em TI
 
 [![Mapa mental de Operações de TI](estudos/mapa-mental.svg)](estudos/README.md)
 
