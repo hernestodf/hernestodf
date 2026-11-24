@@ -1,5 +1,5 @@
 # DevSecOps — Trivy e Gitleaks
-Pipeline de segurança com scanners reais em containers: Gitleaks inspeciona a pasta atual e Trivy verifica configuração do Dockerfile. O teste negativo usa fixture sintética de container privilegiado, fora da pasta auditada, e exige rejeição pelo scanner.
+Pipeline de segurança com scanners reais em containers: Gitleaks inspeciona a pasta atual e Trivy verifica configuração do Dockerfile. O teste negativo usa fixture sintética de container executado como root, fora da pasta auditada, e exige detecção pelo scanner.
 ```sh
 bash testar.sh
 ```
