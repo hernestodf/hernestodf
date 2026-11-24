@@ -1,0 +1,20 @@
+name: Lab jobs-steps
+on:
+  push:
+    paths: ['labs/jobs-steps/**', '.github/workflows/jobs-steps.yml']
+  pull_request:
+    paths: ['labs/jobs-steps/**', '.github/workflows/jobs-steps.yml']
+permissions:
+  contents: read
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: labs/jobs-steps
+    steps:
+      - uses: actions/checkout@v4
+      - name: Executar testes
+        run: |
+          python3 -m unittest -v && python3 jobs.py
