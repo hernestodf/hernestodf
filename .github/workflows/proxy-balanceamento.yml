@@ -1,0 +1,23 @@
+name: Lab proxy-balanceamento
+on:
+  push:
+    paths: ['labs/proxy-balanceamento/**', '.github/workflows/proxy-balanceamento.yml']
+  pull_request:
+    paths: ['labs/proxy-balanceamento/**', '.github/workflows/proxy-balanceamento.yml']
+permissions:
+  contents: read
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: labs/proxy-balanceamento
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose up -d
+      - run: bash testar.sh
+      - if: always()
+        run: docker compose logs --tail=50
+      - if: always()
+        run: docker compose down -v
