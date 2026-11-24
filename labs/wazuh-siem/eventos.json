@@ -1,0 +1,27 @@
+[
+  {
+    "segundo": 0,
+    "ip": "192.0.2.10",
+    "evento": "ssh_failure"
+  },
+  {
+    "segundo": 10,
+    "ip": "192.0.2.10",
+    "evento": "ssh_failure"
+  },
+  {
+    "segundo": 20,
+    "ip": "192.0.2.10",
+    "evento": "ssh_failure"
+  },
+  {
+    "segundo": 30,
+    "ip": "192.0.2.10",
+    "evento": "ssh_failure"
+  },
+  {
+    "segundo": 40,
+    "ip": "192.0.2.10",
+    "evento": "ssh_failure"
+  }
+]
