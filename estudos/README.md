@@ -100,7 +100,57 @@ Leia a analogia, explique o conceito sem consultar o texto, execute o laboratór
 
 [Laboratório correspondente](../labs/profox-go-backend/README.md)
 
-## Revisão de 30 dias
+## 10. Automação de Jobs e Steps
+
+**Entenda:** Imagine uma linha de montagem: a validação depende da extração, e a consolidação depende da validação. Um DAG (grafo direcionado acíclico) organiza essas dependências. Retry tenta novamente uma operação; reprocessamento exige cuidado com duplicação. Idempotência significa que repetir uma operação produz o mesmo efeito pretendido.
+
+**Pratique:** Execute python3 jobs.py e python3 -m unittest -v. Provoque falha transitória, falha definitiva e ciclo de dependências. Observe o bloqueio dos steps dependentes e a continuidade dos independentes.
+
+**Pergunta de entrevista:** Por que não se deve reprocessar um job financeiro automaticamente sem verificar idempotência e estado?
+
+[Laboratório correspondente](../labs/jobs-steps/README.md)
+
+## 11. SQL Troubleshooting
+
+**Entenda:** Um índice funciona como o índice de um livro: reduz o trabalho para localizar dados, mas tem custo de manutenção. EXPLAIN estima um plano; EXPLAIN ANALYZE executa a consulta. Transações preservam atomicidade. Lock é uma proteção de concorrência; deadlock é um ciclo de espera, diferente de simples contenção.
+
+**Pratique:** Inicie o PostgreSQL descartável conforme o README. Compare planos com e sem índice, valide rollback e execute bash test_lock.sh para observar timeout entre sessões.
+
+**Pergunta de entrevista:** Como identificar a sessão bloqueadora? Por que um índice nem sempre é usado?
+
+[Laboratório correspondente](../labs/sql-troubleshooting/README.md)
+
+## 12. Terraform e Ansible
+
+**Entenda:** Terraform é a planta da infraestrutura: descreve recursos e acompanha seu estado. Ansible é a equipe que configura o ambiente. Plan mostra mudanças previstas; apply aplica; state registra vínculos com recursos. Idempotência evita alterações desnecessárias em execuções repetidas.
+
+**Pratique:** Execute bash testar.sh. Observe o recurso local terraform_data, a saída JSON e o playbook. A segunda execução verifica ausência de mudanças no Ansible e o plan confirma estabilidade.
+
+**Pergunta de entrevista:** Qual a diferença entre provisionamento e configuração? Por que proteger o state?
+
+[Laboratório correspondente](../labs/terraform-ansible/README.md)
+
+## 13. Backup e Disaster Recovery
+
+**Entenda:** Backup é uma cópia; recuperação é a capacidade de voltar a operar. RPO define a perda tolerável em tempo, RTO o prazo alvo de recuperação. Hash verifica integridade contra um valor esperado confiável; não substitui assinatura nem cópia independente.
+
+**Pratique:** Execute python3 recuperar.py e python3 -m unittest -v. Verifique restauração em outro diretório, recusa de hash incorreto e caminho inseguro. Cronometre uma restauração e compare com um RTO didático.
+
+**Pergunta de entrevista:** Se o RPO é 1 hora e o último backup tem 4 horas, o objetivo foi atendido?
+
+[Laboratório correspondente](../labs/disaster-recovery/README.md)
+
+## 14. Kubernetes
+
+**Entenda:** Deployment mantém o número desejado de réplicas; Pods executam containers; Service oferece endereço estável. Readiness indica prontidão para tráfego e liveness detecta necessidade de reinício. O controlador substitui Pods perdidos; isso não garante alta disponibilidade física.
+
+**Pratique:** Crie o cluster kind descartável conforme README. Execute bash testar.sh, observe rollout, teste HTTP e substituição de um Pod. Use kubectl describe, logs e get events no namespace de teste.
+
+**Pergunta de entrevista:** Qual a diferença entre Deployment e Service? Por que readiness não é igual a liveness?
+
+[Laboratório correspondente](../labs/kubernetes/README.md)
+
+## Revisão de 45 dias
 
 | Período | Tema |
 |---|---|
@@ -111,5 +161,10 @@ Leia a analogia, explique o conceito sem consultar o texto, execute o laboratór
 | Dias 17–19 | Hardening |
 | Dias 20–22 | Proxmox |
 | Dias 23–26 | Microsoft 365 e Cloud |
-| Dias 27–29 | DevOps, Go e PostgreSQL |
-| Dia 30 | Revisão e entrevista simulada |
+| Dias 27–29 | Docker, Go e PostgreSQL |
+| Dias 30–32 | Jobs e Steps |
+| Dias 33–35 | SQL Troubleshooting |
+| Dias 36–38 | Terraform e Ansible |
+| Dias 39–41 | Disaster Recovery |
+| Dias 42–44 | Kubernetes |
+| Dia 45 | Revisão integrada e entrevista |
