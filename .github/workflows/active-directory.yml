@@ -1,0 +1,22 @@
+name: Lab active-directory
+on:
+  push:
+    paths:
+      - 'labs/active-directory/**'
+      - '.github/workflows/active-directory.yml'
+  pull_request:
+    paths:
+      - 'labs/active-directory/**'
+      - '.github/workflows/active-directory.yml'
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: labs/active-directory/
+    steps:
+      - uses: actions/checkout@v4
+      - name: Testes offline
+        run: pwsh -NoProfile -File testar.ps1
