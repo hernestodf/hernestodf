@@ -1,0 +1,23 @@
+name: Lab keycloak-iam
+on:
+  push:
+    paths: ['labs/keycloak-iam/**', '.github/workflows/keycloak-iam.yml']
+  pull_request:
+    paths: ['labs/keycloak-iam/**', '.github/workflows/keycloak-iam.yml']
+permissions:
+  contents: read
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: labs/keycloak-iam
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose up -d
+      - run: python3 testar.py
+      - if: always()
+        run: docker compose logs --tail=50
+      - if: always()
+        run: docker compose down -v
